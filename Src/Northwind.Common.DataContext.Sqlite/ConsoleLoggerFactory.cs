@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
-
+﻿
 namespace Northwind.Common.DataContext.Sqlite
 {
 	public class ConsoleLoggerFactory : ILoggerFactory

@@ -1,8 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.EntityFrameworkCore;
-
-namespace Northwind.Common.EntityModels.Sqlite.Models
+﻿namespace Northwind.Common.EntityModels.Sqlite.Models
 {
 	[Index(nameof(CategoryName), Name = "CategoryName")]
 	public partial class Category

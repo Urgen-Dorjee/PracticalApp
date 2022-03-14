@@ -1,12 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
+﻿
 
 namespace Northwind.Common.DataContext.Sqlite
 {
 	public static class NorthwindContextExtensions
 	{
 		/// <summary>
-		/// Adds NorthwindContext to the specified IServiceCollection. Use the sqlite database provider
+		/// Adds NorthWindContext to the specified IServiceCollection. Use the SQLite database provider
 		/// </summary>
 		/// <param name="services"></param>
 		/// <param name="relativePath"> Set to override the default of "..."</param>
@@ -21,6 +20,6 @@ namespace Northwind.Common.DataContext.Sqlite
 					.UseLoggerFactory(new ConsoleLoggerFactory()));
 			return services;
 
-		} 
+		}
 	}
 }

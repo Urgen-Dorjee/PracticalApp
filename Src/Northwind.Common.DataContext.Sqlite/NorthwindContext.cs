@@ -1,7 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Northwind.Common.EntityModels.Sqlite.Models;
-
-namespace Northwind.Common.DataContext.Sqlite
+﻿namespace Northwind.Common.DataContext.Sqlite
 {
 	public partial class NorthwindContext : DbContext
 	{
@@ -32,13 +29,11 @@ namespace Northwind.Common.DataContext.Sqlite
 				optionsBuilder.UseSqlite("Filename=../Northwind.db");
 			}
 		}
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.ApplyConfigurationsFromAssembly(typeof(NorthwindContext).Assembly);
+        }
 
-		protected override void OnModelCreating(ModelBuilder builder)
-		{
-			builder.ApplyConfigurationsFromAssembly(typeof(NorthwindContext).Assembly);
-			OnModelCreatingPartial(builder);
-		}
-
-		partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+        partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 	}
 }
